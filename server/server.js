@@ -12,6 +12,7 @@ const { submit } = require(`./controller`)
 
 app.get('/', (req,res) => {
     res.status(200).sendFile(path.join(__dirname, '../public/home.html'))
+
 })
 
 app.post(`/8ball`, submit)

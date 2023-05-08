@@ -2,7 +2,7 @@ const eightBall = document.querySelector('#circle')
 const textSubmit = document.querySelector('#text')
 const form = document.querySelector('#question')
 
-const baseURL = 'http://localhost:4000/8ball'
+const baseURL = '/8ball'
 
 function submit(evt){
     evt.preventDefault()
