@@ -45,6 +45,7 @@ header{
 
 #history-list{
     display: flex;
+    flex-direction: column;
 }
 
 #triangle{

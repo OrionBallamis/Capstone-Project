@@ -20,13 +20,17 @@ function submit(evt){
 }
 
 function getHistory(evt){
+    historyList.innerHTML = ``;
     evt.preventDefault()
     axios.get(baseURL).then(response => {
         let data = response.data
-        for(let i = 0; i < data.length; i++)
-            historyList.innerHTML = `
-                <li>Question: ${data[i].question} Answer: ${data[i].answer}</li>
+        for(let i = 0; i < data.length; i++){
+            let historyTemp = document.createElement(`li`)
+            historyTemp.innerHTML = `
+                Question: ${data[i].question} Answer: ${data[i].answer} <br>
             `;
+            historyList.appendChild(historyTemp)
+        }
     }).catch(err => console.log(err))
 }
 
