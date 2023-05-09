@@ -1,4 +1,5 @@
 const path = require('path');
+
 const eightBallRes = [
     //positive answers
     `It is certain`,`It is decidedly so`,`Without a doubt`,`Yes definitely`,`You may rely on it`,
@@ -29,11 +30,7 @@ module.exports = {
     //get
     },
     getHistory: (request, response) => {
-        for(let i = 0; i < questionAnswerArr.length; i++){
-            historyList.innerHTML = `
-                <li>Question: ${questionAnswerArr[i].question} Answer: ${questionAnswerArr[i].answer}</li>
-            `;
-        }
-        response.sendStatus(200)
+        
+        response.status(200).send(questionAnswerArr)
     }
 }

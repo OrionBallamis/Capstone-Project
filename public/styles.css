@@ -43,8 +43,8 @@ header{
     cursor: url(), pointer;
 }
 
-#question{
-
+#history-list{
+    display: flex;
 }
 
 #triangle{
