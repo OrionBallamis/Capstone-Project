@@ -18,13 +18,22 @@ module.exports = {
     let randomIndex = Math.floor(Math.random() * eightBallRes.length);
     let randomAnswer = eightBallRes[randomIndex];
     const {params,query,body} = request;
-        let Qbody = {
-            question: body.question,
-            answer: randomAnswer
+    let Qbody = {
+        question: body.question,
+        answer: randomAnswer
+    }
+    console.log(Qbody)
+    questionAnswerArr.push(Qbody)
+    console.log(questionAnswerArr)
+    response.status(200).send(questionAnswerArr)
+    //get
+    },
+    getHistory: (request, response) => {
+        for(let i = 0; i < questionAnswerArr.length; i++){
+            historyList.innerHTML = `
+                <li>Question: ${questionAnswerArr[i].question} Answer: ${questionAnswerArr[i].answer}</li>
+            `;
         }
-        console.log(Qbody)
-        questionAnswerArr.push(Qbody)
-        console.log(questionAnswerArr)
-        response.status(200).send(questionAnswerArr)
-   }
+        response.sendStatus(200)
+    }
 }
