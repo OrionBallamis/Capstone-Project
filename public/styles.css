@@ -40,6 +40,7 @@ header{
     justify-content: center;
     color: white;
     font-size: 200px;
+    cursor: url(), pointer;
 }
 
 #question{
