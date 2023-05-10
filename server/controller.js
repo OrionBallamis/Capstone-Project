@@ -32,5 +32,9 @@ module.exports = {
     getHistory: (request, response) => {
         
         response.status(200).send(questionAnswerArr)
+    },
+
+    historyDelete: (request, response) => {
+        
     }
 }

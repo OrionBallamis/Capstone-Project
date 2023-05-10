@@ -32,8 +32,8 @@ header{
 
 #circle{
     background-color: black;
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -55,4 +55,10 @@ header{
     border-right: 50px solid transparent;
     border-bottom: 100px solid blue;
     left: 50px;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    cursor: url(), pointer;
 }

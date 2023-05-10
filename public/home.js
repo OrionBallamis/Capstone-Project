@@ -1,8 +1,10 @@
+const { response } = require("express")
+
 const eightBall = document.querySelector('#circle')
 const textSubmit = document.querySelector('#text')
 const form = document.querySelector('#question')
-const historyBtn = document.querySelector('#history-button')
 const historyList = document.querySelector(`#history-list`)
+const deleteBtn = document.querySelector(`#delete`)
 
 const baseURL = '/8ball'
 
@@ -26,15 +28,32 @@ function getHistory(evt){
         let data = response.data
         for(let i = 0; i < data.length; i++){
             let historyTemp = document.createElement(`li`)
+            let deleteHistory = document.createElement('p')
+
+            deleteHistory.setAttribute('id',`id-${i}`)
+
             historyTemp.innerHTML = `
-                Question: ${data[i].question} Answer: ${data[i].answer} <br>
+                Question: ${data[i].question} Answer: ${data[i].answer} <br> 
+            `;
+            deleteHistory.innerHTML = `
+                X
             `;
             historyList.appendChild(historyTemp)
+            deleteBtn.appendChild(deleteHistory)
         }
     }).catch(err => console.log(err))
+}
+
+function historyDelete (evt){
+    evt.preventDefault()
+    axios.delete(baseURL)
+        .then(response => {
+
+        }).catch(err => console.log(err))
 }
 
 
 
 eightBall.addEventListener('click', submit); 
-historyBtn.addEventListener('click', getHistory)
+eightBall.addEventListener('click', getHistory)
+deleteBtn.addEventListener('click', historyDelete)
