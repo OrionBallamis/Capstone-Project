@@ -35,6 +35,9 @@ module.exports = {
     },
 
     historyDelete: (request, response) => {
-        
+        let { index } = request.params
+        questionAnswerArr.splice(index, 1)
+
+        response.status(200).send(questionAnswerArr)
     }
 }
