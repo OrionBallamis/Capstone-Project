@@ -43,7 +43,7 @@ header{
     cursor: url(), pointer;
 }
 
-#history-list{
+#history{
     display: flex;
     flex-direction: column;
 }
@@ -58,8 +58,27 @@ header{
 }
 
 footer{
-    display: flex;
-    flex-direction: row;
-    cursor: url(), pointer;
+    display:flex;
+    flex-direction: column;
+    padding-bottom: 30px;
 }
 
+#footerDiv{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.QAHistoryDelete{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    display: flex;
+    cursor: url(), pointer;
+    color: crimson;
+    padding-left: 20px;
+}
+
+.logs{
+    display: flex;
+}
