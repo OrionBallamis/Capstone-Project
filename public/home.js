@@ -13,7 +13,7 @@ function getHistoryListFunction(data){
         historyTemp.setAttribute('class',`logs` )
 
         historyTemp.innerHTML = `
-            -Log${i + 1}- `+`  Question: ${data[i].question} Answer: ${data[i].answer} <br>
+            -Log${i + 1}- `+`  ||Question: ${data[i].question}||`+`||Answer: ${data[i].answer}|| <br>
         `;
         deleteHistory.innerHTML = `
             X
